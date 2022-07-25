@@ -1,0 +1,104 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+.nav-overlay {
+  @include position-style(fixed, 0, 0);
+  width: 0;
+  height: 100vh;
+  background-color: #000;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity $main-transition;
+  &.menu-active {
+    width: 100vw;
+    z-index: 999;
+    opacity: 0.6;
+  }
+}
+header {
+  padding: 16px 0;
+  background-color: #fff;
+  top: 0;
+  &.fixed {
+    @include position-style(fixed, 0, 0);
+    width: 100%;
+    box-shadow: 0 4px 26px 12px rgba(0, 0, 0, 0.153);
+    z-index: 99;
+    animation: slide-down $secondary-transition;
+  }
+  @include animation(slide-down) {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  nav .menu-opener {
+    @include text-style(24px, null, #02020280);
+    border: 1px solid #a69e9e;
+    padding: 5px 9px;
+    border-radius: 4px;
+    display: none;
+    cursor: pointer;
+    @media (max-width: 991px) {
+      display: block;
+    }
+  }
+  @media (max-width: 991px) {
+    .nav-wrapper {
+      @include position-style(fixed, 0, null, null, -100%);
+      width: 100%;
+      min-height: 100vh;
+      background-color: #fff;
+      z-index: 99999;
+      transition: right $secondary-transition ease-out;
+      @media (min-width: 576px) {
+        width: 300px;
+        right: -300px;
+      }
+      &.menu-active {
+        right: 0;
+      }
+    }
+  }
+  ul.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    .mobile-menu-head {
+      padding: 30px 20px 30px 0;
+      display: none;
+      .menu-closer {
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+    @media (max-width: 991px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      max-height: 100vh;
+      overflow: auto;
+      li {
+        width: 100%;
+      }
+      .mobile-menu-head {
+        display: flex;
+      }
+    }
+    li.nav-item a {
+      display: inline-block;
+      padding: 15px 27px;
+      @include text-style(14px, 600, #141313);
+      transition: $main-transition;
+      &:hover,
+      &.active {
+        @extend %main-color;
+      }
+      text-transform: uppercase;
+    }
+  }
+}

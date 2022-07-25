@@ -1,0 +1,140 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+.banner {
+  background: {
+    image: url("../imgs/banner/home-banner.png");
+    size: cover;
+    position: top left;
+  }
+  padding: 100px 0;
+  .content {
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+  .info {
+    .hey {
+      @include text-style(50px, bold);
+      width: fit-content;
+      position: relative;
+      &::after {
+        content: "";
+        @extend %el-centered-v;
+        left: calc(100% + 20px);
+        width: 180px;
+        height: 2px;
+        background-color: #000;
+      }
+    }
+    .name,
+    .title {
+      text-transform: uppercase;
+    }
+    .name {
+      @include text-style(70px, bold, null, 0.9);
+      margin: 15px 0;
+    }
+    @media (max-width: 575px) {
+      .name {
+        font-size: 50px;
+      }
+      .hey {
+        font-size: 40px;
+      }
+    }
+    .title {
+      padding: 10px 0;
+      @include text-style(24px, 700);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .btns {
+      margin-top: 30px;
+      > * + * {
+        margin-left: 20px;
+      }
+      .btn.cv {
+        color: #212529;
+        background-color: white;
+        box-shadow: none;
+        &:hover {
+          color: white;
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+  .image {
+    @media (max-width: 991px) {
+      width: 80%;
+      margin-top: 60px;
+    }
+    @media (max-width: 575px) {
+      width: 100%;
+    }
+  }
+}
+.intro {
+  padding: 60px 0;
+  background-color: $section-background;
+  .content {
+    @media (max-width: 991px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+  }
+  .image {
+    margin-right: 30px;
+  }
+  .info {
+    @media (max-width: 991px) {
+      margin-bottom: 35px;
+      width: 100%;
+    }
+    .heading {
+      @include text-style(45px ,bold ,#212529 ,1.1);
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      @media (max-width: 575px) {
+        font-size: 35px;
+      }
+    }
+    .text {
+      margin-top: 25px;
+      @include text-style(null ,600 ,#777777 ,1.4);
+    }
+    .btn {
+      margin-top: 27px;
+    }
+  }
+}
+.brands {
+  padding: 100px 0;
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,180px);
+    grid-template-rows: repeat(auto-fill ,minmax(100px ,1fr));
+    justify-content: space-between;
+    gap: 30px 20px;
+    @media (max-width: 575px) {
+      justify-content: center;
+    }
+  }
+  .brand {
+    padding: 28px 35px;
+    border: 1px solid #ddd;
+    transition: transform $main-transition ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 1px 2px 24px rgba(0, 0, 0, 0.201);
+      img {
+        @include prefixer(filter ,brightness(0.15) ,(webkit ,ms));
+      }
+    }
+  }
+  img {
+    object-fit: contain;
+  }
+}

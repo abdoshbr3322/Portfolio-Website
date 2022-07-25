@@ -1,0 +1,42 @@
+@use "./helpers/globals" as *;
+@use "./helpers/mixins" as *;
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+ul ,ol {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+input,
+select,
+option,
+textarea,
+button {
+  border: none;
+  outline: none;
+}
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  @include width-media-query("min" ,768px ,720px);
+  @include width-media-query("min" ,992px ,970px);
+  @include width-media-query("min" ,1200px ,1170px);
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: calc(($i / 12) * 100%);
+  }
+}

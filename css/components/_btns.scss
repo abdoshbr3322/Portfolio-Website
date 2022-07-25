@@ -1,0 +1,18 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+.main-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 2px solid $main-color;
+  border-radius: 4px;
+  background-color: $main-color;
+  @include text-style(null, 800, white);
+  text-transform: uppercase;
+  transition: $main-transition;
+  box-shadow: 0 10px 26px 0 rgb(0 0 0 / 25%);
+  &:hover {
+    background-color: white;
+    color: #212529;
+  }
+}
