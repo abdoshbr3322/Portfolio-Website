@@ -55,7 +55,7 @@
         margin-left: 20px;
       }
       .btn.cv {
-        color: #212529;
+        color: $main-text-color;
         background-color: white;
         box-shadow: none;
         &:hover {
@@ -93,7 +93,7 @@
       width: 100%;
     }
     .heading {
-      @include text-style(45px ,bold ,#212529 ,1.1);
+      @include text-style(45px ,bold ,$main-text-color ,1.1);
       text-transform: uppercase;
       letter-spacing: 10px;
       @media (max-width: 575px) {
@@ -136,5 +136,44 @@
   }
   img {
     object-fit: contain;
+  }
+}
+.services {
+  padding: 60px 0;
+  .content {
+    flex-wrap: wrap;
+  }
+  .serv {
+    max-width: 280px;
+    margin: 0 auto 20px;
+    flex-direction: column;
+    background-color: #f8fcfdec;
+    padding: 50px 0;
+    text-align: center;
+    transition: box-shadow $secondary-transition;
+    &:hover {
+      box-shadow: 1px 5px 36px 0 rgba(0, 0, 0, 0.154);
+    }
+    @include breakpoint("mobile") {
+      max-width: 48%;
+    }
+    @include breakpoint("medium") {
+      max-width: 30%;
+    }
+    @include breakpoint("large") {
+      max-width: 23%;
+    }
+    .image {
+      margin-bottom: 20px;
+    }
+    .title {
+      @include text-style(20px ,bold ,$main-text-color);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .discription {
+      @include text-style(null ,500 ,#6c757d ,1.6);
+      padding: 0 20px;
+    }
   }
 }

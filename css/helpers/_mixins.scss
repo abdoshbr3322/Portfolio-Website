@@ -84,7 +84,7 @@
 }
 
 /// make flex more easier to use
-@mixin flex($justify-content, $align-items: null, $flex-flow: null) {
+@mixin flex($justify-content: null, $align-items: null, $flex-flow: null) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
