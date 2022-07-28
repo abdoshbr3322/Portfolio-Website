@@ -166,7 +166,81 @@
       </div>
     </div>
   </div>
+  <div class="portfolio">
+    <div class="container">
+      <h2 class="heading">RECENTLY DONE PROJECT <br>
+        QUALITY WORK</h2>
+      <div class="catgs">
+        <button class="btn catg" data-catg="*" onclick="filter(this.dataset.catg)">All</button>
+        <button class="btn catg" data-catg=".popular" onclick="filter(this.dataset.catg)">Popular</button>
+        <button class="btn catg" data-catg=".latest" onclick="filter(this.dataset.catg)">Latest</button>
+        <button class="btn catg" data-catg=".following" onclick="filter(this.dataset.catg)">Following</button>
+        <button class="btn catg" data-catg=".upcoming" onclick="filter(this.dataset.catg)">Upcoming</button>
+      </div>
+      <div class="content grid">
+        <div class="project latest" data-catg="latest">
+          <img src="./imgs/portfolio/p1.jpg" alt="Portfolio" data-index="0" onclick="slider.openGallery(this)">
+          <div class="title">MINIMUL DESING</div>
+          <div class="categories">Latest, Portfolio</div>
+        </div>
+        <div class="project popular" data-catg="popular">
+          <img src="./imgs/portfolio/p2.jpg" alt="Portfolio" data-index="1" onclick="slider.openGallery(this)">
+          <div class="title">PAINT WALL</div>
+          <div class="categories">Popular, Portfolio</div>
+        </div>
+        <div class="project popular" data-catg="popular">
+          <img src="./imgs/portfolio/p3.jpg" alt="Portfolio" data-index="2" onclick="slider.openGallery(this)">
+          <div class="title">FEMALE LIGHT</div>
+          <div class="categories">Popular, Portfolio</div>
+        </div>
+
+        <div class="project upcoming" data-catg="upcoming">
+          <img src="./imgs/portfolio/p4.jpg" alt="Portfolio" data-index="3" onclick="slider.openGallery(this)">
+          <div class="title">FOURTH AIR</div>
+          <div class="categories">Upcoming, Portfolio</div>
+        </div>
+        <div class="project following" data-catg="following">
+          <img src="./imgs/portfolio/p5.jpg" alt="Portfolio" data-index="4" onclick="slider.openGallery(this)">
+          <div class="title">TOGETHER SIGN</div>
+          <div class="categories">Following, Portfolio</div>
+        </div>
+        <div class="project upcoming" data-catg="upcoming">
+          <img src="./imgs/portfolio/p6.jpg" alt="Portfolio" data-index="5" onclick="slider.openGallery(this)">
+          <div class="title">MULIPLE FOWN</div>
+          <div class="categories">Upcoming, Portfolio</div>
+        </div>
+        <div class="project following" data-catg="following">
+          <img src="./imgs/portfolio/p7.jpg" alt="Portfolio" data-index="6" onclick="slider.openGallery(this)">
+          <div class="title">GREEN HEAVEN</div>
+          <div class="categories">Following, Portfolio</div>
+        </div>
+        <div class="project upcoming" data-catg="upcoming">
+          <img src="./imgs/portfolio/p8.jpg" alt="Portfolio" data-index="7" onclick="slider.openGallery(this)">
+          <div class="title">CAMERA LENS</div>
+          <div class="categories">Upcoming, Portfolio</div>
+        </div>
+        <div class="project following" data-catg="following">
+          <img src="./imgs/portfolio/p9.jpg" alt="Portfolio" data-index="8" onclick="slider.openGallery(this)">
+          <div class="title">FLY MALE</div>
+          <div class="categories">Following, Portfolio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery space-between-items">
+    <div class="prev"><i class="fa-solid fa-angle-left"></i></div>
+    <div class="image">
+      <div class="closer">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <img src="" alt="">
+      <div class="position"><span class="current"></span> of 9</div>
+    </div>
+    <div class="next"><i class="fa-solid fa-angle-right"></i></div>
+  </div>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/gallery.js"></script>
 </body>
 
 </html>
