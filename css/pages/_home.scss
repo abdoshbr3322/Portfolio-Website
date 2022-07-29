@@ -102,7 +102,6 @@
     }
     .text {
       margin-top: 25px;
-      @include text-style(null, 600, #777777, 1.4);
     }
     .btn {
       margin-top: 27px;
@@ -251,7 +250,7 @@
     }
   }
   .image {
-    @include flex(null ,flex-end ,column);
+    @include flex(null, flex-end, column);
     .closer {
       padding: 10px 0 10px 10px;
     }
@@ -259,9 +258,8 @@
       cursor: pointer;
     }
     .position {
-      @include text-style(14px ,null ,#d6c2c2);
+      @include text-style(14px, null, #d6c2c2);
       margin-top: 5px;
-
     }
   }
   .prev,
@@ -270,6 +268,61 @@
     font-size: 35px;
     &:active i {
       transform: scale(0.9);
+    }
+  }
+}
+.monials {
+  padding: 60px 0;
+  .owl-carousel {
+    .owl-stage {
+      padding: 48px 24px !important;
+    }
+    .owl-item {
+      width: 100%;
+      @media (min-width: 576px) {
+        width: calc(50% - 48px);
+      }
+    }
+    .box {
+      background-color: #fff;
+      padding: 32px 15px;
+      box-shadow: 4px 15px 22px rgb(0 0 0 / 10%);
+      @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image {
+        flex-shrink: 0;
+        margin-bottom: 25px;
+        @media (min-width: 768px) {
+          width: 80px;
+          margin: 0 45px 0 0;
+        }
+      }
+      .name {
+        @include text-style(21px ,bold ,#212529);
+        margin-bottom: 8px;
+      }
+      .review {
+        @include text-style(14px ,bold ,#777777 ,1.8)
+      }
+    }
+    .bullets {
+      @include flex(center);
+      > .bullet + .bullet {
+        margin-left: 12px;
+      }
+      .bullet {
+        @include circle(11px);
+        background-color: #d6d6d6;
+        cursor: pointer;
+        &:hover {
+          background-color: #869791;
+        }
+        &.active {
+          background-color: $main-color;
+        }
+      }
     }
   }
 }
