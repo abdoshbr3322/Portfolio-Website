@@ -1,4 +1,12 @@
 $(document).ready(function () {
+  // remove page loading and show the page
+  let loading = $(".page-loading");
+  loading.addClass("loaded");
+  loading.on("transitionend", function () {
+    $(this).css("display", "none");
+  });
+  $(document.body).addClass("loaded");
+
   // Open Mega Menu On Hover On Desktop
   let menu = $("nav .nav-wrapper");
   let overlay = $("nav .nav-overlay");

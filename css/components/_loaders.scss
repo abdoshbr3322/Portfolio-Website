@@ -1,0 +1,44 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+body {
+  overflow: hidden;
+  &.loaded {
+    overflow: auto;
+  } 
+}
+.page-loading {
+  transition: 1s;
+  &.loaded {
+    opacity: 0;
+  }
+  @include overlay($main-color, 1);
+  z-index: 999999;
+  .loader {
+    position: relative;
+    .one,
+    .two {
+      @extend %el-centered-b;
+      border: 8px dotted #fff;
+    }
+    .one {
+      @include circle(100px);
+      animation: loader-one 2s linear infinite;
+    }
+    .two {
+      @include circle(65px);
+      border-width: 6px;
+      animation: loader-two 1.6s linear infinite;
+    }
+  }
+}
+@include animation(loader-one) {
+  to {
+    transform: translate(-50% ,-50%) rotate(1turn);
+  }
+}
+@include animation(loader-two) {
+  to {
+    transform: translate(-50% ,-50%) rotate(-1turn);
+  }
+}

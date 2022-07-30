@@ -14,6 +14,7 @@ $(document).ready(function () {
     onResize: resized,
     onInitialize: resized,
   });
+
 })
 
 function resized() {
