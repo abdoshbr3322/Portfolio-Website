@@ -10,9 +10,9 @@
     margin-bottom: 20px;
   }
   p {
-    @include text-style(null, 600, #777);
+    @include text-style(null, 600, $main-text-color);
   }
 }
 .main-text {
-  @include text-style(null, 600, #777777, 1.4);
+  @include text-style(null, 600, $main-text-color, 1.4);
 }

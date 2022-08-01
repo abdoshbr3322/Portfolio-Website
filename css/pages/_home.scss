@@ -262,7 +262,7 @@
         margin-bottom: 8px;
       }
       .review {
-        @include text-style(14px, bold, #777777, 1.8);
+        @include text-style(14px, bold, $main-text-color, 1.8);
       }
     }
     .bullets {

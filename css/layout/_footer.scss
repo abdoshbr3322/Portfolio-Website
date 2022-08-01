@@ -1,0 +1,48 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+footer {
+  padding: 90px 0;
+  background-image: url("../imgs/footer-bg.png");
+  background-size: 150% 85%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  .content {
+    flex-direction: column;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+  .follow {
+    @include text-style(23px, bold, #212529);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  ul.socials {
+    li.icon {
+      a {
+        display: inline-block;
+        padding: 32px;
+        @include text-style(22px, null, rgba(32, 31, 31, 0.096));
+        @include breakpoint("small-mobile") {
+          padding: 20px;
+          font-size: 18px;
+        }
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .copyright {
+    @include text-style(null, bold, $main-text-color, 1.5);
+    text-align: center;
+    a {
+      color: $main-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
